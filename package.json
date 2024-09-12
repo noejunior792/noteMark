@@ -1,7 +1,7 @@
 {
-  "name": "note-mark",
-  "version": "1.0.0",
-  "description": "A Markdown Note taking app built with Electron",
+  "name": "mark-note",
+  "version": "1.1.0",
+  "description": "A Markdown Note App",
   "license": "MIT",
   "main": "./out/main/index.js",
   "scripts": {
@@ -17,6 +17,17 @@
     "build:win": "npm run build && electron-builder --win --config",
     "build:mac": "electron-vite build && electron-builder --mac --config",
     "build:linux": "electron-vite build && electron-builder --linux --config"
+  },
+  "build": {
+    "appId": "com.markdown.id",
+    "productName": "Mark Note",
+    "directories": {
+      "output": "dist"
+    },
+    "win": {
+      "target": "nsis",
+      "icon": "resources/icon.ico"
+    }
   },
   "dependencies": {
     "@electron-toolkit/preload": "^2.0.0",
@@ -38,7 +49,7 @@
     "autoprefixer": "^10.4.16",
     "clsx": "^2.1.0",
     "electron": "^25.6.0",
-    "electron-builder": "^24.6.3",
+    "electron-builder": "^25.0.5",
     "electron-vite": "^1.0.27",
     "eslint": "^8.47.0",
     "eslint-plugin-react": "^7.33.2",
